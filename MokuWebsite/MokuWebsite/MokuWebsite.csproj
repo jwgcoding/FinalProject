@@ -7,7 +7,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Content Include="Images\favicon.ico" />
+    <Content Include="Images\moku.png"/>
   </ItemGroup>
 
 </Project>
