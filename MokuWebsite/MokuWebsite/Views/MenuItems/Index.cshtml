@@ -1,0 +1,44 @@
+﻿@model IEnumerable<MenuItems>
+
+<style>
+h2
+{
+    font-family:'Old English Text MT';
+    font-size: 36px;
+}
+
+
+
+
+</style>
+
+<h2>Menu</h2>
+<table class="table">
+    <tr>
+        <th>ID</th>
+        <th>ItemName</th>
+        <th>Price</th>
+        <th>IsSeafood</th>
+        <th>HasGluten</th>
+        <th>Picture</th>
+    </tr>
+
+    
+
+</table>
+<div class="container text-center">
+    <div class="row">
+        <div class="col">
+            @foreach (var items in @Model)
+            {
+            <tr>
+                <td>@items.ID</td>
+                <td>@items.ItemName</td>
+                <td>@items.Price</td>
+                <td>@items.IsSeafood</td>
+                <td>@items.HasGluten</td>
+
+            </tr>
+            }
+        </div>
+     
