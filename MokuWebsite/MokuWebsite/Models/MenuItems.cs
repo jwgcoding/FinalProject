@@ -9,7 +9,7 @@ namespace MokuWebsite.Models
         public MenuItems()
         {
         }
-        public int ID { get; set; }
+ 
 
         public string ItemName { get; set; }
         public double Price { get; set; }
