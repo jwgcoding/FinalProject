@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title> @ViewData["Title"] - Mokutanya</title>
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
-    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" type="text/css"/>
     <link rel="stylesheet" href="~/MokuWebsite.styles.css" asp-append-version="true" />
 </head>
 <body>
@@ -15,25 +15,35 @@
        
         <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-dark bg-dark border-bottom box-shadow mb-3">
             <a style="float:left" >
-                 
-                    <img src="https://media-cdn.grubhub.com/image/upload/d_search:browse-images:default.jpg/w_100,q_80,fl_lossy,dpr_2.0,c_fit,f_auto,h_100/jx7iqimtkmlmvjf0oaex" height="60" alt="./lib/Images/"moku.png">
+
+                <img src="https://media-cdn.grubhub.com/image/upload/d_search:browse-images:default.jpg/w_100,q_80,fl_lossy,dpr_2.0,c_fit,f_auto,h_100/jx7iqimtkmlmvjf0oaex" height="200" width="200" alt="./lib/Images/" moku.png" th;>
                </a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
                         aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
-                <div style="float: left;height: 100%;text-align:right;position:center;font-size: 20px;">
-                    <ul style= "list-style: none;">
-                   
+            <div id="menu">
+                    <ul style= "list-style: none; column-rule:hidden">
+                        
                         <li class="nav-item">
-                            
+                        <div style="float:left; height: 100%; text-align:center; position: relative; font-size: 36px; font-family:'Old English Text MT'">
+                            <div class="container" style="width: 100%" ;>
                             <a class="nav-link text-light" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
+                        <span style="top: -535px;">...</span>
+                            </div>
+                        </div>
                         </li>
-                        <li class="nav-item">
+                      
+                        <li class="nav-item" >
+                          <div style="float:left; height: 100%; text-align:center; position: relative; font-size: 36px; font-family:'Old English Text MT'">
+                              <div class="container" style="width: 100%";>
                             <a class="nav-link text-light" asp-area="" asp-controller="MenuItems" asp-action="Index">Menu</a>
-                        </li>
+                            </div>
+                        </div>
+                         </li>
+                      
                     </ul>
-                </div>
+            </div>
            
         </nav>
     </header>

@@ -8,9 +8,9 @@ namespace MokuWebsite.Models
     {
         public MenuItems()
         {
-        }
- 
 
+        }
+    
         public string ItemName { get; set; }
         public double Price { get; set; }
         public string IsSeafood { get; set; }
