@@ -10,16 +10,33 @@
 </head>
 <body>
     <header>
-        <div class="navigation agiletop-nav fixed"></div>
-        <div class="container" style="width:100%"></div>
-       
-        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-dark bg-dark border-bottom box-shadow mb-3">
-            <a style="float:left" >
+        <div id="page_wrapper">
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+            
+            <a class="navbar-brand" href="/">
+                <img src="https://media-cdn.grubhub.com/image/upload/d_search:browse-images:default.jpg/w_100,q_80,fl_lossy,dpr_2.0,c_fit,f_auto,h_100/jx7iqimtkmlmvjf0oaex" height="90" width="90" alt="./lib/Images/" moku.png" class="d-inline-block align-top mb-2 mt-1">
+                </a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+                <div class="navbar-nav" >
+                    <ul>
+                        <li><a class="nav-link text-light" asp-area="" asp-controller="Home" asp-action="Index">Home </a></li>
+                        <li><a class="nav-link text-light" asp-area="" asp-controller="MenuItems" asp-action="Index">Menu</a></li>
+                    </ul>
+                </div>
+             </div>
+                
+        </nav>
+        
+        @*<nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-dark bg-dark border-bottom box-shadow mb-3">
+            <a class="navbar-brand" href="/" >
 
-                <img src="https://media-cdn.grubhub.com/image/upload/d_search:browse-images:default.jpg/w_100,q_80,fl_lossy,dpr_2.0,c_fit,f_auto,h_100/jx7iqimtkmlmvjf0oaex" height="200" width="200" alt="./lib/Images/" moku.png" th;>
+                <img src="https://media-cdn.grubhub.com/image/upload/d_search:browse-images:default.jpg/w_100,q_80,fl_lossy,dpr_2.0,c_fit,f_auto,h_100/jx7iqimtkmlmvjf0oaex" height="200" width="250" alt="./lib/Images/" moku.png" class="d-inline-block align-top mb-2 mt-1">
                </a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
-                        aria-expanded="false" aria-label="Toggle navigation">
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarCollapse"
+                        aria-expanded="true" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
             <div id="menu">
@@ -34,18 +51,18 @@
                         </div>
                         </li>
                       
-                        <li class="nav-item" >
+                        <li class="nav-item">
                           <div style="float:left; height: 100%; text-align:center; position: relative; font-size: 36px; font-family:'Old English Text MT'">
                               <div class="container" style="width: 100%";>
                             <a class="nav-link text-light" asp-area="" asp-controller="MenuItems" asp-action="Index">Menu</a>
-                            </div>
-                        </div>
+                            </div>*@
+           @*             </div>
                          </li>
                       
                     </ul>
             </div>
            
-        </nav>
+        </nav>*@
     </header>
     <div class="container">
         <main role="main" class="pb-3">

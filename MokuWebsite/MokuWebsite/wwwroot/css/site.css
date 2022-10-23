@@ -1,5 +1,7 @@
 html {
   font-size: 14px;
+  position: relative;
+  min-height: 100%;
 }
 
 @media (min-width: 768px) {
@@ -8,12 +10,43 @@ html {
   }
 }
 
-html {
-  position: relative;
-  min-height: 100%;
-}
-
 body {
   margin-bottom: 60px;
 }
 
+nav ul {
+    list-style: none;
+    margin: 0 2px;
+    padding: 0;
+    display: flex;
+    justify-content: space-around;
+    text-align:left;
+}
+nav{
+    height:86px;
+}
+#page_wrapper {
+    width: 100%;
+    margin: 0 auto;
+}
+header {
+    background-color:#212529;
+}
+nav li {
+    display: inline-block;
+    height: 100%;
+    width: 10%;
+}
+nav li a {
+    font-family: 'Old English Text MT';
+    font-size: 24px;
+    color: #ff1e4b;
+    text-decoration: none;
+
+}
+nav ul li {
+    border-left: 0px solid white;
+    list-style-type: none;
+    padding: 100px;
+    width: 100%; /*this is the line that helped me get rid of the white space at the start of my nav */
+}

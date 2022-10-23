@@ -15,6 +15,8 @@ namespace MokuWebsite.Models
         public double Price { get; set; }
         public string IsSeafood { get; set; }
         public string HasGluten { get; set; }
+        
+        public string Picture { get; set; }
        
     }
     
