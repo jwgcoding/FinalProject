@@ -6,6 +6,13 @@
 
 <div style="display:block">
     <style>
+        h2{
+            font-family: 'Old English Text MT';
+            font-size: 40px;
+        }
+        table td{
+            <height = 100%>
+        }
         table th {
             background-color: #b8DBfd;
             color: #333;
@@ -14,21 +21,18 @@
         }
 
         table th, table td {
-            padding: 5px;
-            border: 1px solid #ccc;
-        }
-
-        table th, table td {
+            padding: 4px;
             border: 0px solid #ccc;
+            border-color:black;
         }
 
+       
     </style>
 </div>
 <h2>Menu</h2>
-<table class="table" cellpadding="0" cellspacing="0">
+<table class="table" cellpadding="0" cellspacing="0" border="1" width="100%">
 
     <tr>
-        
         <th>Item Name</th>
         <th>Price</th>
         <th>Seafood</th>
@@ -40,10 +44,10 @@
             {
             <tr>
                 <td>@items.ItemName</td>
-                <td>@items.Price</td>
+                <td>$@items.Price</td>
                 <td>@items.IsSeafood</td>
                 <td>@items.HasGluten</td>
-                <td><img src = @items.Picture width="100px"; height="100px"></td>
+                <td><img src = @items.Picture height="150px" width="150px"></td>
             </tr>
              }
     
