@@ -7,7 +7,6 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <None Include="wwwroot\css\homepage.css" />
     <None Include="wwwroot\lib\Images\favicon.ico" />
     <None Include="wwwroot\lib\Images\moku.png" />
   </ItemGroup>
