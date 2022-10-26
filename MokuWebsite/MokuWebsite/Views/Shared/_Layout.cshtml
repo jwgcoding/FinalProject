@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" type="text/css"/>
     <link rel="stylesheet" href="~/MokuWebsite.styles.css" asp-append-version="true" />
+    
 </head>
 <body>
     <header>
@@ -22,10 +23,15 @@
             <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
                 <div class="navbar-nav" >
                     <ul>
-                        <li><a class="nav-link text-light" asp-area="" asp-controller="Home" asp-action="Index">Home </a></li>
+                        <li><a class="nav-link text-light" asp-area="" asp-controller="Home" asp-action="Index">Home</a></li>
                         <li><a class="nav-link text-light" asp-area="" asp-controller="MenuItems" asp-action="Index">Menu</a></li>
+                        
                     </ul>
+                   
                 </div>
+
+                <button style="btn"><i class="fas fa-shopping-cart"></i> Checkout </button>
+              
              </div>
                 
         </nav>
