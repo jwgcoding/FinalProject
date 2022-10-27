@@ -18,6 +18,9 @@ namespace MokuWebsite.Models
         
         public string Picture { get; set; }
        
+        public string Skewers { get; set; }
+        public string Tapas { get; set; }
+        public string Ramen { get; set; }
     }
     
 }
