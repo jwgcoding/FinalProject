@@ -17,20 +17,20 @@ namespace MokuWebsite.Controllers
             return View(menuItems);
         }
 
-        public IEnumerable<MenuItems> GetAllSkewers()
-        {
-            var skewers = repo.GetAllSkewers();
-            return skewers;
-        }
-        public IEnumerable<MenuItems> GetAllTapas()
-        {
-            var tapas = repo.GetAllTapas();
-            return tapas;
-        }
-        public IEnumerable<MenuItems> GetAllRamen()
-        {
-            var ramen = repo.GetAllRamen();
-            return ramen;
-        }
+        //public IEnumerable<MenuItems> GetAllSkewers()
+        //{
+        //    var skewers = repo.GetAllSkewers();
+        //    return skewers;
+        //}
+        //public IEnumerable<MenuItems> GetAllTapas()
+        //{
+        //    var tapas = repo.GetAllTapas();
+        //    return tapas;
+        //}
+        //public IEnumerable<MenuItems> GetAllRamen()
+        //{
+        //    var ramen = repo.GetAllRamen();
+        //    return ramen;
+        //}
     }
 }
