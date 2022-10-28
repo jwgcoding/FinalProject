@@ -11,16 +11,16 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 
 </head>
- 
+
 <body>
-    
+
     <style>
         .carousel-item {
             height: 600px;
-            width:600px;
-          background-color:black;
+            width: 600px;
+            background-color: black;
             color: white;
-            position:inherit;
+            position: inherit;
         }
 
         .pics {
@@ -36,10 +36,12 @@
         img {
             float: right;
         }
+
         .carousel-inner {
             display: flex;
             flex-direction: row;
         }
+
         .container {
             position: center;
             bottom: 0;
@@ -47,62 +49,86 @@
             right: 0;
             padding-bottom: 0px;
         }
-        body{
-            background-color:black;
+
+        body {
+            background-color: black;
         }
-        h2{
-            font-family:'Old English Text MT';
-            color:white;
-            font-size:24px;
+
+        h2 {
+            font-family: 'Old English Text MT';
+            color: white;
+            font-size: 24px;
         }
-        p{
-            color:white;
+
+        p {
+            color: white;
             font-size: 18px;
         }
 
-        .carousel {
-            width: auto;
+        /* .carousel {
+                    width: auto;
             height: auto;
+            object-fit: contain;
+                }*/
+
+        .carousel-inner > .item > img,
+        .carousel-inner > .item > a > img {
+            width: 70%;
+            margin: auto;
         }
-        
+              /*  .carousel-item{
+                    flex-wrap:initial;
+            object-fit: contain;
+                }*/
+        .carousel img {
+            width: 100%;
+            height: auto;
+            margin:auto;
+        }
     </style>
 
 
-    <div id="carouselExampleControls" class="carousel slide bg-inverse w-50 ms-auto me-auto" data-bs-ride="carousel" data-interval="500">
-       
-    <div class="carousel-inner">
-        <div class="carousel-item active">
-                <img src="/lib/Images/Moku/bottles.jpg" class="d-block w-400 img-fluid" alt="First slide">
-        </div>
-        <div class="carousel-item ">
-                <img class="d-block w-700 img-fluid" src="/lib/Images/Moku/bottles2.jpg" alt="Second slide">
-        </div>
-        <div class="carousel-item ">
-                <img class="d-block w-400 img-fluid" src="/lib/Images/Moku/bottles3.jpg" alt="Third slide">
-        </div>
-        <div class="carousel-item">
-                <img class="d-block w-400 img-fluid" src="/lib/Images/Moku/fronthouse.jpg" alt="Fourth slide">
-        </div>
-        <div class="carousel-item">
-                <img class="d-block w-400 img-fluid" src="/lib/Images/Moku/frontinterior.jpg" alt="Fifth slide">
-        </div>
-        <div class="carousel-item">
-                <img class="d-block w-400 img-fluid" src="/lib/Images/Moku/frontinterior2.jpg" alt="Sixth slide">
-        </div>
-        <div class="carousel-item">
-                <img class="d-block w-400 img-fluid" src="/lib/Images/Moku/frontinterior3.jpg" alt="Seventh slide">
-        </div>
-    </div>
-   
-</div>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous"></script>
-<div>
+    <div id="carouselExampleControls" class="carousel slide " data-bs-ride="carousel">
 
-</div>    
-<section id="map"> <! -- Map -->
- <h2 class="border border-danger ">About Us</h2>
- <p>We are a Japanese Yakitori restaraunt running for over 10 years. We have a variety of skewers, tapas, ramens and sakes.</p>
- <p>Come visit us today!</p>
-<iframe width="400" height="400" style="border:0" loading="lazy" allowfullscreen src="https://www.google.com/maps/embed/v1/place?q=place_id:ChIJP8ZRyCV2j4ARfqQbhMi2gHE&key=AIzaSyCJoOhPj1XUq7wGCE30M6x1q5XUYh_Of08"></iframe>
-</section>
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <img src="/lib/Images/Moku/fronthouse_1200x780.jpg" class="d-block" alt="First slide">
+            </div>
+            <div class="carousel-item ">
+                <img class="  img-fluid" src="/lib/Images/Moku/bottles2_1200x780.jpg" alt="Second slide">
+            </div>
+            <div class="carousel-item ">
+                <img class="img-fluid" src="/lib/Images/Moku/interior2_1200x780.jpg" alt="Third slide">
+            </div>
+            <div class="carousel-item">
+                <img class="img-fluid" src="/lib/Images/Moku/frontinterior2_1200x780.jpg" alt="Fourth slide">
+            </div>
+            <div class="carousel-item">
+                <img class=" img-fluid" src="/lib/Images/Moku/bottles_1200x780.jpg" alt="Fifth slide">
+            </div>
+            <div class="carousel-item">
+                <img class=" img-fluid" src="/lib/Images/Moku/interior4_1200x780.jpg" alt="Sixth slide">
+            </div>
+            <div class="carousel-item">
+                <img class=" img-fluid" src="/lib/Images/Moku/frontinterior3_1200x780.jpg" alt="Seventh slide">
+            </div>
+        </div>
+        <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="sr-only">Previous</span>
+        </a>
+        <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="sr-only">Next</span>
+        </a>
+    
+    </div>
+
+    <section id="map">
+        <! -- Map -->
+        <h2 class="border border-danger ">About Us</h2>
+        <p>We are a Japanese Yakitori restaraunt running for over 10 years. We have a variety of skewers, tapas, ramens and sakes.</p>
+        <p>Come visit us today!</p>
+        <iframe width="400" height="400" style="border:0" loading="lazy" allowfullscreen src="https://www.google.com/maps/embed/v1/place?q=place_id:ChIJP8ZRyCV2j4ARfqQbhMi2gHE&key=AIzaSyCJoOhPj1XUq7wGCE30M6x1q5XUYh_Of08"></iframe>
+    </section>
 </body>
