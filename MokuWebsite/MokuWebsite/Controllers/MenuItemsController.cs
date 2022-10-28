@@ -17,11 +17,22 @@ namespace MokuWebsite.Controllers
             return View(menuItems);
         }
 
-        //public IEnumerable<MenuItems> GetAllSkewers()
-        //{
-        //    var skewers = repo.GetAllSkewers();
-        //    return skewers;
-        //}
+        public IActionResult Skewers()
+        {
+            var skewers = repo.GetAllSkewers();
+            return View(skewers);
+        }
+        public IActionResult Tapas()
+        {
+            var tapas = repo.GetAllTapas();
+            return View(tapas);
+
+        }
+        public IActionResult Ramens()
+        {
+            var ramen = repo.GetAllRamen(); 
+            return View(ramen);
+        }
         //public IEnumerable<MenuItems> GetAllTapas()
         //{
         //    var tapas = repo.GetAllTapas();

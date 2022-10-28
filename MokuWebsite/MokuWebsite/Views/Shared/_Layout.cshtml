@@ -6,36 +6,37 @@
     <title> @ViewData["Title"] - Mokutanya</title>
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" type="text/css"/>
-    <link rel="stylesheet" href="~/MokuWebsite.styles.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/Views/MenuItems/styles.css" asp-append-version="true" />
     
 </head>
 <body>
     <header>
-        <div id="page_wrapper"></div>
+        <div id="page_wrapper">
         <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
             
             <a class="navbar-brand" href="/">
-                <img src="https://media-cdn.grubhub.com/image/upload/d_search:browse-images:default.jpg/w_100,q_80,fl_lossy,dpr_2.0,c_fit,f_auto,h_100/jx7iqimtkmlmvjf0oaex" height="90" width="90" alt="./lib/Images/" moku.png" class="d-inline-block align-top mb-2 mt-1">
+                <img src="https://media-cdn.grubhub.com/image/upload/d_search:browse-images:default.jpg/w_100,q_80,fl_lossy,dpr_2.0,c_fit,f_auto,h_100/jx7iqimtkmlmvjf0oaex" height="60" width="60" alt="./lib/Images/" moku.png" class="d-inline-block align-content-lg-around">
                 </a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-                <div class="navbar-nav" >
-                    <ul>
+                
+                    <ul class ="navbar-nav">
                         <li><a class="nav-link text-light" asp-area="" asp-controller="Home" asp-action="Index">Home</a></li>
                         <li><a class="nav-link text-light" asp-area="" asp-controller="MenuItems" asp-action="Index">Menu</a></li>
-                        
                     </ul>
                    
                 </div>
+                <div id="button1"><a href="~/Views/MenuItems/Skewers.cshtml" class="btn btn-info"><i class="fas fa-shopping-cart"></i> Checkout </a></div>
+                
+                    
 
-                <button style:"btn"><i class="fas fa-shopping-cart"></i> Checkout </button>
-                <link href = "~/Views/Home/Checkout.cshtml"/>
-              
+
+            </nav>
              </div>
                 
-        </nav>
+      
         
         @*<nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-dark bg-dark border-bottom box-shadow mb-3">
             <a class="navbar-brand" href="/" >

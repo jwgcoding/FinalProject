@@ -2,6 +2,7 @@
 using MokuWebsite.Models;
 using System.Data;
 using System.Drawing;
+using Microsoft.AspNetCore.Mvc;
 
 namespace MokuWebsite
 {
@@ -24,16 +25,16 @@ namespace MokuWebsite
           return _conn.Query<MenuItems>("SELECT * FROM MenuItems WHERE ID = @id", new { id = id });
         }
 
-        public IEnumerable<MenuItems> GetAllSkewers(int id)
+        public IEnumerable<MenuItems> GetAllSkewers()
         {
             return _conn.Query<MenuItems>("SELECT * FROM MenuItems WHERE CategoryID = 1");
         }
        
-        public IEnumerable<MenuItems> GetAllTapas(int id)
+        public IEnumerable<MenuItems> GetAllTapas()
         {
             return _conn.Query<MenuItems>("SELECT * FROM MenuItems WHERE CategoryID = 2");
         }
-        public IEnumerable<MenuItems> GetAllRamen(int id)
+        public IEnumerable<MenuItems> GetAllRamen()
         {
             return _conn.Query<MenuItems>("SELECT * FROM MenuItems WHERE CategoryID = 3");
         }

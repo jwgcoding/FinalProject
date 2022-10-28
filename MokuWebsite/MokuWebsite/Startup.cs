@@ -11,6 +11,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using MySql.Data.MySqlClient;
 using MokuWebsite;
+using Microsoft.AspNetCore.Mvc;
 
 namespace MokuWebsite
 {
@@ -44,7 +45,7 @@ namespace MokuWebsite
             {
                 app.UseExceptionHandler("/Home/Error");
                 // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
-                
+
             }
             else
             {
@@ -52,14 +53,15 @@ namespace MokuWebsite
                 app.UseHsts();
             }
 
+
             app.UseHttpsRedirection();
             app.UseStaticFiles();
 
             app.UseRouting();
 
             app.UseAuthorization();
-          
-         
+
+
 
             app.UseEndpoints(endpoints =>
             {
@@ -67,9 +69,8 @@ namespace MokuWebsite
                 name: "default",
                 pattern: "{controller=Home}/{action=Index}/{id?}");
             });
-            
 
-           
         }
     }
 }
+

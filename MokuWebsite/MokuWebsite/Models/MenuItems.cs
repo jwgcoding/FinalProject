@@ -1,4 +1,5 @@
-﻿using Org.BouncyCastle.Crypto.Paddings;
+﻿using Microsoft.AspNetCore.Mvc;
+using Org.BouncyCastle.Crypto.Paddings;
 using System;
 
 namespace MokuWebsite.Models
@@ -10,7 +11,7 @@ namespace MokuWebsite.Models
         {
 
         }
-    
+        
         public string ItemName { get; set; }
         public decimal Price { get; set; }
         public string IsSeafood { get; set; }
@@ -18,9 +19,45 @@ namespace MokuWebsite.Models
         
         public string Picture { get; set; }
        
-        public string Skewers { get; set; }
-        public string Tapas { get; set; }
-        public string Ramen { get; set; }
+   
+      
     }
-    
+    public class SkewerItems
+    {
+        public SkewerItems()
+        {
+        }
+        public string ItemName { get; set; }
+        public decimal Price { get; set; }
+        public string IsSeafood { get; set; }
+        public string HasGluten { get; set; }
+
+        public string Picture { get; set; }
+    }
+    public class TapaItems
+    {
+        public TapaItems()
+        {
+
+        }
+        public string ItemName { get; set; }
+        public decimal Price { get; set; }
+        public string IsSeafood { get; set; }
+        public string HasGluten { get; set; }
+
+        public string Picture { get; set; }
+    }
+    public class RamenItems
+    {
+        public RamenItems()
+        {
+
+        }
+        public string ItemName { get; set; }
+        public decimal Price { get; set; }
+        public string IsSeafood { get; set; }
+        public string HasGluten { get; set; }
+
+        public string Picture { get; set; }
+    }
 }
