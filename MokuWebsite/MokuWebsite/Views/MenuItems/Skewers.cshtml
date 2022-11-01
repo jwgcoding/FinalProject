@@ -49,15 +49,15 @@
         </style>
     </div>
 
-    <h2>Menu2</h2>
+    <h2>Skewers</h2>
     <div class="dropdown">
         <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
             Menu Filter
         </button>
         <div class="dropdown-menu" aria-labelledby="dropdownMenu2">
             <a class="dropdown-item" asp-controller="MenuItems" asp-action="Skewers" type="button">Skewers</a>
-            <a class="dropdown-item" href="https://www.google.com" type="button">Tapas</a>
-            <a class="dropdown-item" href="https://www.facebook.com" type="button">Ramen</a>
+            <a class="dropdown-item" asp-controller="MenuItems" asp-action="Tapas" type="button">Tapas</a>
+            <a class="dropdown-item" asp-controller="MenuItems" asp-action="Ramens" type="button">Ramens</a>
         </div>
     </div>
     <div class="container">
