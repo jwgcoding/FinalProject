@@ -46,6 +46,12 @@
                 float: right;
                 height: auto;
             }
+
+            label {
+                color: white;
+                font-family: 'Old English Text MT';
+                font-size: 24px;
+            }
         </style>
     </div>
 
@@ -55,9 +61,18 @@
             Menu Filter
         </button>
         <div class="dropdown-menu" aria-labelledby="dropdownMenu2">
+            <a class="dropdown-item" asp-controller="MenuItems" asp-action="Index" type="button">Full Menu</a>
             <a class="dropdown-item" asp-controller="MenuItems" asp-action="Skewers" type="button">Skewers</a>
             <a class="dropdown-item" asp-controller="MenuItems" asp-action="Tapas" type="button">Tapas</a>
             <a class="dropdown-item" asp-controller="MenuItems" asp-action="Ramens" type="button">Ramens</a>
+        </div>
+    </div> 
+    <div class="row">
+        <div class=" col-sm-12">
+            <div class=" form-inline pull-right">
+                <label>Item Search</label>
+                <input type = "text" class="form-control" id="textSearch"/>
+            </div>
         </div>
     </div>
     <div class="container">
@@ -72,17 +87,16 @@
                     <th>Picture</th>
                 </tr>
 
-                @foreach (var skewers in @Model)
+                @foreach (var items in @Model)
                 {
                     <tr>
-                        <td>@skewers.ItemName</td>
-                        <td>$@skewers.Price</td>
-                        <td>@skewers.IsSeafood</td>
-                        <td>@skewers.HasGluten</td>
-                        <td><img src=@skewers.Picture height="150" width="150" class="rounded-circle"></td>
+                        <td>@items.ItemName</td>
+                        <td>$@items.Price</td>
+                        <td>@items.IsSeafood</td>
+                        <td>@items.HasGluten</td>
+                        <td><img src=@items.Picture height="150" width="150" class="rounded-circle"></td>
                     </tr>
                 }
-
             </table>
 
         </div>

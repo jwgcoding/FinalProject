@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using MokuWebsite.Models;
+using System.Security.Cryptography.X509Certificates;
 
 namespace MokuWebsite.Controllers
 {
@@ -33,6 +34,20 @@ namespace MokuWebsite.Controllers
             var ramen = repo.GetAllRamen(); 
             return View(ramen);
         }
+
+      //  public List<MenuItems> GetMenuItems()
+      //  {
+      //      List<MenuItems> mod = new List<MenuItems>
+       //     {
+      //          new MenuItems { repo.GetAllItems }
+      //      };
+      //  }
+      //  public PartialViewResult SearchItems(string searchText)
+      //      {
+            
+     //       var result = repo.Where(a => a.Name.ToLower().Contains(searchText)) || a.Price.ToString().Contains(searchText));
+      //      return PartialView("_Index.cshtml",result);
+      //  }
         //public IEnumerable<MenuItems> GetAllTapas()
         //{
         //    var tapas = repo.GetAllTapas();
