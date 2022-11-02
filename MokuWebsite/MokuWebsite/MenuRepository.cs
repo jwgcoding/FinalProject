@@ -43,6 +43,18 @@ namespace MokuWebsite
             _conn.Execute("UPDATE MenuItems SET ItemName = @name, Price = @price, CategoryID = @category WHERE ID = @id",
              new { name = menuItems.ItemName, price = menuItems.Price, category = menuItems.CategoryID, id = menuItems.ID });
         }
+
+        public void InsertMenuItems(MenuItems menuItems)
+        {
+            _conn.Execute("INSERT INTO MenuItems (NAME, PRICE, CATEGORYID, HasGluten, IsSeafood) VALUES (@name, @price, @categoryID, @seafood, @gluten);",
+                new { name = menuItems.ItemName, price = menuItems.Price, categoryID = menuItems.CategoryID, seafood = menuItems.IsSeafood, gluten = menuItems.HasGluten });
+        }
+
+        public void DeleteProduct(MenuItems menuItems)
+        {
+            _conn.Execute("DELETE FROM MenuItems WHERE ID = @id;", new { id = menuItems.ID });
+    
+        }
     }
 }
   

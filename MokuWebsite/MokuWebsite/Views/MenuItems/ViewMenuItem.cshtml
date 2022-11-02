@@ -26,7 +26,7 @@
    }
 </style>
 <header>  
-    <h1>This is the item</h1>
+    <h1>This is the item you are editing</h1>
     
 </header>
 <body>
@@ -36,11 +36,34 @@
         <th>CategoryID</th>
         <th>Item Name</th>
         <th>Price</th>
+
         </tr>
         <td>@Model.CategoryID</td>
         <td>@Model.ItemName</td>
         <td>@Model.Price</td>
+        <td><img src=@Model.Picture height="150" width="150" class="rounded-circle"></td>
+
         
-        <td><button class=""</td>
+       @* <td><button class=""</td>*@
+        <table style="display: inline-flex">
+
+            <tr style="display: block">
+                <a href="/MenuItems/Index" class="btn btn-info m-1">Go Back</a>
+            </tr>
+
+            <th style="display: block">
+                <a href="/MenuItems/UpdateMenu/@Model.ID" class="btn btn-warning m-1">Update</a>
+            </th>
+
+          @*  <div style="display: block">
+
+                @using (Html.BeginForm("DeleteItem", "MenuItems", "Post"))
+                {
+                    <input type="hidden" asp-for="MenuItems" value="@Model.CategoryID" />
+                    <input type="submit" class="btn btn-danger m-1" onclick="return confirm('Are you sure?')" value="Delete" />
+                }
+            </div>*@
+
+        </table>
     </table>
 </body>
