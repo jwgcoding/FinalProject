@@ -14,6 +14,7 @@ namespace MokuWebsite
         public IEnumerable<MenuItems> GetAllTapas();
         
         public IEnumerable<MenuItems> GetAllRamen();
+        public void UpdateItem(MenuItems item);
      
     }
 }

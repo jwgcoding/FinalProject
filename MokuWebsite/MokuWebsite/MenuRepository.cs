@@ -38,6 +38,11 @@ namespace MokuWebsite
         {
             return _conn.Query<MenuItems>("SELECT * FROM MenuItems WHERE CategoryID = 3");
         }
+        public void UpdateProduct(MenuItems menuItems)
+        {
+            _conn.Execute("UPDATE MenuItems SET Name = @name, Price = @price WHERE CategoryID = @id",
+             new { name = menuItems.ItemName, price = menuItems.Price, id = product.ProductID });
+        }
     }
 }
   
