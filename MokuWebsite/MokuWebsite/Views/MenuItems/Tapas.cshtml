@@ -89,7 +89,11 @@
                 @foreach (var items in @Model)
                 {
                     <tr>
-                        <td>@items.ItemName</td>
+                        <td>
+                            <form asp-controller="MenuItems" asp-action="ViewMenuItem">
+                                <button class="btn btn-info" id="submit" name="id" type="submit" value="@items.ID">@items.ItemName</button>
+                            </form>
+                        </td>
                         <td>$@items.Price</td>
                         <td>@items.IsSeafood</td>
                         <td>@items.HasGluten</td>

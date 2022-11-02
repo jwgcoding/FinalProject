@@ -20,9 +20,9 @@ namespace MokuWebsite
             return _conn.Query<MenuItems>("SELECT * FROM MenuItems ");
         }
 
-        public IEnumerable<MenuItems> GetItem(int id)
+        public MenuItems GetItem(int id)
         {
-          return _conn.Query<MenuItems>("SELECT * FROM MenuItems WHERE ID = @id", new { id = id });
+          return _conn.QuerySingle<MenuItems>("SELECT * FROM MenuItems WHERE ID = @id", new { id = id });
         }
 
         public IEnumerable<MenuItems> GetAllSkewers()
@@ -38,10 +38,10 @@ namespace MokuWebsite
         {
             return _conn.Query<MenuItems>("SELECT * FROM MenuItems WHERE CategoryID = 3");
         }
-        public void UpdateProduct(MenuItems menuItems)
+        public void UpdateMenuItems(MenuItems menuItems)
         {
-            _conn.Execute("UPDATE MenuItems SET Name = @name, Price = @price WHERE CategoryID = @id",
-             new { name = menuItems.ItemName, price = menuItems.Price, id = product.ProductID });
+            _conn.Execute("UPDATE MenuItems SET ItemName = @name, Price = @price, CategoryID = @category WHERE ID = @id",
+             new { name = menuItems.ItemName, price = menuItems.Price, category = menuItems.CategoryID, id = menuItems.ID });
         }
     }
 }

@@ -90,6 +90,11 @@
                 @foreach (var items in @Model)
                 {
                     <tr>
+                        <td>
+                            <form asp-controller="MenuItems" asp-action="ViewMenuItem">
+                                <button class="btn btn-info" id="submit" name="id" type="submit" value="@items.ID">@items.ItemName</button>
+                            </form>
+                        </td>
                         <td>@items.ItemName</td>
                         <td>$@items.Price</td>
                         <td>@items.IsSeafood</td>

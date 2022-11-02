@@ -18,9 +18,8 @@ namespace MokuWebsite.Models
         public string HasGluten { get; set; }
         
         public string Picture { get; set; }
-       
-   
-      
+        public object CategoryID { get; internal set; }
+        public int ID { get; set;}
     }
     public class SkewerItems
     {

@@ -11,7 +11,7 @@ namespace MokuWebsite.Controllers
         {
             this.repo = repo;
         }
-
+        // Get All Products Method//
         public IActionResult Index()
         {
             var menuItems = repo.GetAllItems();
@@ -34,20 +34,47 @@ namespace MokuWebsite.Controllers
             var ramen = repo.GetAllRamen(); 
             return View(ramen);
         }
+        public IActionResult ViewMenuItem()
+        {
+            var result = Request.Form["id"];
+            var id = Convert.ToInt32(result);
+            var menuItem = repo.GetItem(id);
+            if (menuItem == null)
+            {
+                return View("Error");
+            }
+            return View(menuItem);
+        }
+        public IActionResult UpdateMenu(int id)
+        {
+            MenuItems menuItems = repo.GetItem(id);
+            if (menuItems == null)
+            {
+                return View("Error");
+            }
+            return View(menuItems);
+        }
 
-      //  public List<MenuItems> GetMenuItems()
-      //  {
-      //      List<MenuItems> mod = new List<MenuItems>
-       //     {
-      //          new MenuItems { repo.GetAllItems }
-      //      };
-      //  }
-      //  public PartialViewResult SearchItems(string searchText)
-      //      {
-            
-     //       var result = repo.Where(a => a.Name.ToLower().Contains(searchText)) || a.Price.ToString().Contains(searchText));
-      //      return PartialView("_Index.cshtml",result);
-      //  }
+        public IActionResult UpdateProductToDatabase(MenuItems menuItems)
+        {
+            repo.UpdateMenuItems(menuItems);
+
+            return RedirectToAction("ViewMenuItem", new { id = menuItems.ID });
+        }
+
+        //  public List<MenuItems> GetMenuItems()
+        //  {
+        //      List<MenuItems> mod = new List<MenuItems>
+        //     {
+        //          new MenuItems { repo.GetAllItems }
+        //      };
+        //  }
+        //  public PartialViewResult SearchItems(string searchText)
+        //      {
+
+        //       var result = repo.Where(a => a.Name.ToLower().Contains(searchText)) || a.Price.ToString().Contains(searchText));
+        //      return PartialView("_Index.cshtml",result);
+        //  }
         //public IEnumerable<MenuItems> GetAllTapas()
         //{
         //    var tapas = repo.GetAllTapas();
