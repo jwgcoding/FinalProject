@@ -16,11 +16,11 @@ namespace MokuWebsite.Models
         public decimal Price { get; set; }
         public string IsSeafood { get; set; }
         public string HasGluten { get; set; }
-        
+        public int CategoryID{ get; set; }
         public string Picture { get; set; }
         
         public int ID { get; set;}
-        public IEnumerable<Category> CategoryID { get; set; }
+        public IEnumerable<Category> Categories { get; set; }
     }
     public class SkewerItems
     {

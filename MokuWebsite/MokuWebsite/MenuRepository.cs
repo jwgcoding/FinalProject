@@ -53,13 +53,13 @@ namespace MokuWebsite
 
         public IEnumerable<Category> GetCategoryID()
         {
-            return _conn.Query<Category>("SELECT * FROM CategoryID;");
+            return _conn.Query<Category>("SELECT * FROM MenuItems WHERE CategoryID;");
         }
         public MenuItems AssignCategoryID()
         {
             var categoryIDList = GetCategoryID();
             var menuItems = new MenuItems();
-            menuItems.CategoryID = categoryIDList;
+            menuItems.Categories = categoryIDList;
             return menuItems;
         }
         public void DeleteProduct(MenuItems menuItems)
