@@ -7,9 +7,12 @@
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" type="text/css"/>
     <link rel="stylesheet" href="~/Views/MenuItems/styles.css" asp-append-version="true" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <style>
         .navbar{
             background-color:red;
+            padding:12px;
+            margin:5px;
         }
 
         .navbar-toggler-icon {
@@ -24,6 +27,18 @@
             border: 1px double;
             border-color:yellow;
         }
+        .btn {
+  background-color:black; /* Blue background */
+  border: none; /* Remove borders */
+  color: white; /* White text */
+  padding: 12px 16px; /* Some padding */
+  font-size: 24px; /* Set a font size */
+  cursor: pointer; /* Mouse pointer on hover */
+            a href: "https://www.grubhub.com/restaurant/mokutanya-1155-california-dr-burlingame/2193381"''
+}
+
+/* Darker background on mouse-over */
+
     </style>
 </head>
 <body>
@@ -45,8 +60,20 @@
                     </ul>
                    
                 </div>
-                @*<div id="button1"><a href="~/Views/MenuItems/Skewers.cshtml" class="btn btn-info"><i class='bx bx-cart bx-tada-hover' id="cart-icon" value="0"></i> Checkout </a></div>
-                *@
+               
+                    @*<i class="bi bi-basket" id="cart-icon"> </i>*@
+                    @*<a href="https://www.grubhub.com/restaurant/mokutanya-1155-california-dr-burlingame/2193381"> Delivery </a>*@
+                  @*  <form action="https://www.grubhub.com/restaurant/mokutanya-1155-california-dr-burlingame/2193381">
+                    <input type="submit" value="Delivery" />
+                    <div>
+                        <i class="fa fa-shopping-cart"></i>
+                        </div>
+                    </form>*@
+                    @*<button class="btn"><i class="fa fa-shopping-cart"></i>Delivery</button>*@
+                <a href="https://www.grubhub.com/restaurant/mokutanya-1155-california-dr-burlingame/2193381" class="btn fa fa-shopping-cart" role="button">Delivery</a>
+                   
+                
+               
             </nav>
              </div>
                 
