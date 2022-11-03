@@ -34,10 +34,10 @@ namespace MokuWebsite.Controllers
             var ramen = repo.GetAllRamen(); 
             return View(ramen);
         }
-        public IActionResult ViewMenuItem()
+        public IActionResult ViewMenuItem(int id)
         {
-            var result = Request.Form["id"];
-            var id = Convert.ToInt32(result);
+            //var result = Request.Form["id"];
+            //var id = Convert.ToInt32(result);
             var menuItem = repo.GetItem(id);
             if (menuItem == null)
             {
@@ -60,6 +60,17 @@ namespace MokuWebsite.Controllers
             repo.UpdateMenuItems(menuItems);
 
             return RedirectToAction("ViewMenuItem", new { id = menuItems.ID });
+        }
+
+        public IActionResult InsertMenuItem()
+        {
+            var item = repo.AssignCategoryID();
+            return View(item);
+        }
+        public IActionResult InsertProductToDatabase(MenuItems menuItems)
+        {
+            repo.InsertMenuItems(menuItems);
+            return RedirectToAction("Index");
         }
 
         //  public List<MenuItems> GetMenuItems()

@@ -23,6 +23,7 @@ namespace MokuWebsite
         public MenuItems GetItem(int id)
         {
           return _conn.QuerySingle<MenuItems>("SELECT * FROM MenuItems WHERE ID = @id", new { id = id });
+
         }
 
         public IEnumerable<MenuItems> GetAllSkewers()
@@ -50,6 +51,17 @@ namespace MokuWebsite
                 new { name = menuItems.ItemName, price = menuItems.Price, categoryID = menuItems.CategoryID, seafood = menuItems.IsSeafood, gluten = menuItems.HasGluten });
         }
 
+        public IEnumerable<Category> GetCategoryID()
+        {
+            return _conn.Query<Category>("SELECT * FROM CategoryID;");
+        }
+        public MenuItems AssignCategoryID()
+        {
+            var categoryIDList = GetCategoryID();
+            var menuItems = new MenuItems();
+            menuItems.CategoryID = categoryIDList;
+            return menuItems;
+        }
         public void DeleteProduct(MenuItems menuItems)
         {
             _conn.Execute("DELETE FROM MenuItems WHERE ID = @id;", new { id = menuItems.ID });

@@ -1,0 +1,40 @@
+﻿@model MenuItems
+<div class="bg bg-primary p-3 mt-5 border border-warning rounded shadow-lg">
+    <h2 class="text-warning">Create a New Product</h2>
+
+    @using (Html.BeginForm("InsertProductToDatabase", "MenuItem", "Post"))
+    {
+        <input asp-for="CategoryID" type="hidden" value="" />
+
+        <label asp-for="ItemName" class="control-label">Name</label>
+        <input type="text" name="Name" class="form-control mb-2" value="" />
+
+        <label asp-for="Price" class="control-label">Price</label>
+        <input type="number"  name="Price" class="form-control mb-2" />
+
+        <div class="form-group">
+            <label for="">What type of item?</label>
+            <select class="form-control mb-2" name="CategoryID" value="">
+                @foreach (var cat in Model.CategoryID)
+                {
+                    <option value="@cat.CategoryID">@cat.CategoryID @cat.ItemName</option>
+                }
+            </select>
+
+            <label asp-for="IsSeafood" class="control-label">Is this a seafood item?:</label>
+            <select type="number" name="IsSeafood" class="form-control form-select mb-2" value="@Model.IsSeafood">
+                <option value="0">No</option>
+                <option value="1">Yes</option>
+
+            </select>
+
+            <label asp-for="HasGluten" class="control-label">Does this item have gluten?:</label>
+            <input type="string" name="HasGluten" class="form-control mb-2" value="@Model.HasGluten" />
+        </div>
+        <div style="display: block">
+            <a href="/MenuItems/Index" class="btn btn-outline-primary mt-1"> Back</a>
+        <input type="submit" value="Create Product" class="btn btn-outline-warning mt-1 "/>
+        </div>
+    }
+
+</div>
