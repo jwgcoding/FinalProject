@@ -22,24 +22,19 @@
             font-size: 60px;
             color:white;
         }
-        table td{
-            color:white;
-            font-size:14px;
-        }
-        table th {
-            background-color: black;
-            color: white;
-            font-family:'Old English Text MT';
-            font-size:26px;
-           
-        }
+
         table th, table td {
             padding: 4px;
-            border: 0px solid #ccc;
-                border-color: whitesmoke;
-                
+           
+          
+                background-color: black;
+                color: white;
+                font-family: Georgia, 'Times New Roman', Times, serif;
+                font-size: 26px;
+            }
+        table{
+            border-color:red;
         }
-        
        body{
            background-color:black;
 
@@ -60,10 +55,10 @@
     
 <h2>Menu</h2>
     <div style="display: block">
-        <a href="/MenuItems/InsertMenuItem/">Create a New Item</a>
+        <a href="/MenuItems/InsertMenuItem/" class="btn btn-success m-1">Create a New Item</a>
     </div>
     <div class="dropdown">
-        <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        <button class="btn btn-info dropdown-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
             Menu Filter
         </button>
         <div class="dropdown-menu" aria-labelledby="dropdownMenu2">

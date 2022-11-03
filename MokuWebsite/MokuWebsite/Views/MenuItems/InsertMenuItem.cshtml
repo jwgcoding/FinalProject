@@ -14,9 +14,15 @@
 <style>
     h2{
         color:white;
-        font-family:'Old English Text MT';
+        font-family:'Times New Roman', Times, serif;
         font-size:24px;
         
+    
+    }
+    label {
+        font-size: 24px; 
+         color:white;
+        font-family:'Times New Roman', Times, serif;
     }
    body{
         background-color: black
@@ -25,28 +31,31 @@
         color:white;
        font-size:24px;
    }
-</style>
-<div class="bg bg-dark p-3 mt-5 border border-warning rounded shadow-lg">
-    <h2 class="">Create a New Product</h2>
-    <body>
-    @using (Html.BeginForm("InsertProductToDatabase", "MenuItem", "Post"))
-    {
-        <input asp-for="CategoryID" type="hidden" value="" />
 
-        <label asp-for="ItemName" class="control-label">Name</label>
-            <input type="text" name="Name" class="form-check form-select mb-2" value="" />
+
+</style>
+<div class="bg bg-dark p-3 mt-5 border border-danger rounded "> 
+    <h2 class="">Create a New Menu Item</h2>
+    <body>
+    @using (Html.BeginForm("InsertMenuItemToDatabase", "MenuItems", "Post"))
+    {
+        <input asp-for="ID" type="hidden" value="" />
+
+        <label asp-for="ItemName" class="name control-label ">Item Name</label>
+            <input type="text" name="ItemName" class="form-check form-select mb-2" value="" />
 
         <label asp-for="Price" class="control-label">Price</label>
             <input type="number" name="Price" class="form-check form-select mb-2" />
 
         <div class="form-group">
-            <label for="">What type of item?</label>
-                <select class="form-check form-select mb-2" name="CategoryID" value="">
-                @foreach (var cat in Model.Categories)
-                {
-                    <option value="@cat.CategoryID">@cat.CategoryID @cat.ItemName</option>
-                }
-            </select>
+                <label asp-for="CategoryID" class="control-label">What type of item?</label>
+                <select type="number" name="CategoryID" class="form-check form-select mb-2" value="@Model.CategoryID">
+                    <option value="1">Skewers</option>
+                    <option value="2">Tapas</option>
+                    <option value="3">Ramens</option>
+
+
+                </select>
 
             <label asp-for="IsSeafood" class="control-label">Is this a seafood item?:</label>
                 <select type="number" name="IsSeafood" class="form-check form-select mb-2" value="@Model.IsSeafood">
@@ -56,7 +65,7 @@
             </select>
 
             <label asp-for="HasGluten" class="control-label">Does this item have gluten?:</label>
-                <input type="string" name="HasGluten" class="form-check form-select mb-2" value="@Model.HasGluten" />
+                <input type="text" name="HasGluten" class="form-check form-select mb-2" value="@Model.HasGluten" />
         </div>
         <div style="display: block">
             <a href="/MenuItems/Index" class="btn btn-outline-primary mt-1"> Back</a>

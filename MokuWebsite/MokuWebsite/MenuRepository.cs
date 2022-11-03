@@ -17,12 +17,12 @@ namespace MokuWebsite
 
         public IEnumerable<MenuItems> GetAllItems()
         {
-            return _conn.Query<MenuItems>("SELECT * FROM MenuItems ");
+            return _conn.Query<MenuItems>("SELECT * FROM MenuItems ORDER BY CategoryID");
         }
 
         public MenuItems GetItem(int id)
         {
-          return _conn.QuerySingle<MenuItems>("SELECT * FROM MenuItems WHERE ID = @id", new { id = id });
+          return _conn.QuerySingle<MenuItems>("SELECT * FROM MenuItems WHERE ID = @id ", new { id = id });
 
         }
 
@@ -47,22 +47,18 @@ namespace MokuWebsite
 
         public void InsertMenuItems(MenuItems menuItems)
         {
-            _conn.Execute("INSERT INTO MenuItems (NAME, PRICE, CATEGORYID, HasGluten, IsSeafood) VALUES (@name, @price, @categoryID, @seafood, @gluten);",
-                new { name = menuItems.ItemName, price = menuItems.Price, categoryID = menuItems.CategoryID, seafood = menuItems.IsSeafood, gluten = menuItems.HasGluten });
+            _conn.Execute("INSERT INTO MenuItems (ItemNAME, PRICE, CATEGORYID, HasGluten, IsSeafood) VALUES (@name, @price, @categoryID, @seafood, @gluten);",
+                new { name = menuItems.ItemName, price = menuItems.Price, categoryID = menuItems.CategoryID, seafood = menuItems.IsSeafood, gluten = menuItems.HasGluten});
         }
 
-        public IEnumerable<Category> GetCategoryID()
+        
+        public MenuItems AssignMenuItem()
         {
-            return _conn.Query<Category>("SELECT * FROM MenuItems WHERE CategoryID;");
-        }
-        public MenuItems AssignCategoryID()
-        {
-            var categoryIDList = GetCategoryID();
+            
             var menuItems = new MenuItems();
-            menuItems.Categories = categoryIDList;
             return menuItems;
         }
-        public void DeleteProduct(MenuItems menuItems)
+        public void DeleteMenuItems(MenuItems menuItems)
         {
             _conn.Execute("DELETE FROM MenuItems WHERE ID = @id;", new { id = menuItems.ID });
     

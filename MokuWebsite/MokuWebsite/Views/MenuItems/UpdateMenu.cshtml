@@ -20,30 +20,11 @@
             color: white;
         }
 
-        table td {
-            color: white;
-            font-size: 14px;
-        }
-
-        table th {
-            background-color: black;
-            color: white;
-            font-family: 'Old English Text MT';
-            font-size: 26px;
-        }
-
-        table th, table td {
-            padding: 4px;
-            border: 0px solid #ccc;
-            border-color: whitesmoke;
-        }
-
         body {
             background-color: black;
             
         }
-
-        name {
+       label {
             color: white;
         }
     </style>
@@ -55,10 +36,10 @@
     {
         <div class="row">
     <div class="col">
-        <input asp-for="CategoryID" type="hidden" value="@Model.CategoryID" />
+        <input asp-for="ID" type="hidden" value="@Model.ID" />
 
         <label asp-for="ItemName" class="control-label">Name</label>
-        <input type="text" name="Name" class="form-check  mb-3" value="@Model.ItemName" />
+        <input type="text" name="ItemName" class="form-check  mb-3" value="@Model.ItemName" />
 
         <label asp-for="Price" class="control-label">Price</label>
         <input type="number" name="Price" class="form-check mb-1" value="@Model.Price" />
@@ -80,7 +61,7 @@
         </select>
 
         <label asp-for="IsSeafood" class="control-label">Is this a seafood item?:</label>
-        <input type="string" name="IsSeafood" class="form-check mb-1" value="@Model.IsSeafood" />
+        <input type="submit" name="IsSeafood" class="form-check mb-1" value="@Model.IsSeafood" />
 
         <div style="display: block">
             <a href="/MenuItems/Index" class="btn btn-outline-primary mt-1">Go Back</a>

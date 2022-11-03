@@ -7,6 +7,7 @@ namespace MokuWebsite.Models
 {
     public class MenuItems
     {
+        //Getting MenuItems
         public MenuItems()
         {
 
@@ -18,10 +19,11 @@ namespace MokuWebsite.Models
         public string HasGluten { get; set; }
         public int CategoryID{ get; set; }
         public string Picture { get; set; }
-        
         public int ID { get; set;}
-        public IEnumerable<Category> Categories { get; set; }
+        
     }
+    //Getting Skewer Items
+
     public class SkewerItems
     {
         public SkewerItems()
@@ -34,6 +36,7 @@ namespace MokuWebsite.Models
 
         public string Picture { get; set; }
     }
+    //Getting Tapa Items
     public class TapaItems
     {
         public TapaItems()
@@ -47,6 +50,8 @@ namespace MokuWebsite.Models
 
         public string Picture { get; set; }
     }
+
+    //Getting Ramen Items
     public class RamenItems
     {
         public RamenItems()

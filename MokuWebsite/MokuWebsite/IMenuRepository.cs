@@ -17,8 +17,8 @@ namespace MokuWebsite
         public void UpdateMenuItems(MenuItems item);
         public MenuItems GetItem(int id);
         public void InsertMenuItems(MenuItems item);
-        public IEnumerable<Category> GetCategoryID();
-        public MenuItems AssignCategoryID();
-
+        
+        public MenuItems AssignMenuItem();
+        public void DeleteMenuItems(MenuItems item);
     }
 }
