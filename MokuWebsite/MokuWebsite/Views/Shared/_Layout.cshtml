@@ -5,14 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title> @ViewData["Title"] - Mokutanya</title>
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
-    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" type="text/css"/>
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" type="text/css" />
     <link rel="stylesheet" href="~/Views/MenuItems/styles.css" asp-append-version="true" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <style>
-        .navbar{
-            background-color:red;
-            padding:12px;
-            margin:5px;
+        .navbar {
+            background-color: #F08080;
+            padding: 0px;
+            margin: 0px;
         }
 
         .navbar-toggler-icon {
@@ -23,95 +23,52 @@
             content: "";
             background: no-repeat center center;
             background-size: 100% 100%;
-            background-color:yellow;
+            background-color: yellow;
             border: 1px double;
-            border-color:yellow;
+            border-color: yellow;
         }
-        .btn {
-  background-color:black; /* Blue background */
-  border: none; /* Remove borders */
-  color: white; /* White text */
-  padding: 12px 16px; /* Some padding */
-  font-size: 20px; /* Set a font size */
-  cursor: pointer; /* Mouse pointer on hover */
-          
-}
 
-/* Darker background on mouse-over */
+        .btn {
+            background-color: black; /* Blue background */
+            border: none; /* Remove borders */
+            color: white; /* White text */
+            padding: 12px 16px; /* Some padding */
+            font-size: 20px; /* Set a font size */
+            cursor: pointer; /* Mouse pointer on hover */
+        }
+
+        /* Darker background on mouse-over */
 
     </style>
 </head>
 <body>
     <header>
         <div id="page_wrapper">
-        <nav class="navbar navbar-expand-lg navbar">
-            
-            <a class="navbar-brand" href="/">
-                <img src="https://media-cdn.grubhub.com/image/upload/d_search:browse-images:default.jpg/w_100,q_80,fl_lossy,dpr_2.0,c_fit,f_auto,h_100/jx7iqimtkmlmvjf0oaex" height="60" width="60" alt="./lib/Images/" moku.png" class="d-inline-block align-content-lg-around">
+            <nav class="navbar navbar-expand-lg navbar">
+
+                <a class="navbar-brand" href="/">
+                    <img src="https://media-cdn.grubhub.com/image/upload/d_search:browse-images:default.jpg/w_100,q_80,fl_lossy,dpr_2.0,c_fit,f_auto,h_100/jx7iqimtkmlmvjf0oaex" height="60" width="60" alt="./lib/Images/" moku.png" class="d-inline-block align-content-lg-around">
                 </a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-                
-                    <ul class ="navbar-nav">
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+
+                    <ul class="navbar-nav">
                         <li><a class="nav-link text-light" asp-area="" asp-controller="Home" asp-action="Index">Home</a></li>
                         <li><a class="nav-link text-light" asp-area="" asp-controller="MenuItems" asp-action="Index">Menu</a></li>
                     </ul>
-                   
-                </div>
-               
-                    @*<i class="bi bi-basket" id="cart-icon"> </i>*@
-                    @*<a href="https://www.grubhub.com/restaurant/mokutanya-1155-california-dr-burlingame/2193381"> Delivery </a>*@
-                  @*  <form action="https://www.grubhub.com/restaurant/mokutanya-1155-california-dr-burlingame/2193381">
-                    <input type="submit" value="Delivery" />
-                    <div>
-                        <i class="fa fa-shopping-cart"></i>
-                        </div>
-                    </form>*@
-                    @*<button class="btn"><i class="fa fa-shopping-cart"></i>Delivery</button>*@
-                <a href="https://www.grubhub.com/restaurant/mokutanya-1155-california-dr-burlingame/2193381" class="btn fa fa-shopping-cart" role="button">Delivery</a>
-                   
-                
-               
-            </nav>
-             </div>
-                
-      
-        
-        @*<nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-dark bg-dark border-bottom box-shadow mb-3">
-            <a class="navbar-brand" href="/" >
 
-                <img src="https://media-cdn.grubhub.com/image/upload/d_search:browse-images:default.jpg/w_100,q_80,fl_lossy,dpr_2.0,c_fit,f_auto,h_100/jx7iqimtkmlmvjf0oaex" height="200" width="250" alt="./lib/Images/" moku.png" class="d-inline-block align-top mb-2 mt-1">
-               </a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarCollapse"
-                        aria-expanded="true" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-            <div id="menu">
-                    <ul style= "list-style: none; column-rule:hidden">
-                        
-                        <li class="nav-item">
-                        <div style="float:left; height: 100%; text-align:center; position: relative; font-size: 36px; font-family:'Old English Text MT'">
-                            <div class="container" style="width: 100%" ;>
-                            <a class="nav-link text-light" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
-                        <span style="top: -535px;">...</span>
-                            </div>
-                        </div>
-                        </li>
-                      
-                        <li class="nav-item">
-                          <div style="float:left; height: 100%; text-align:center; position: relative; font-size: 36px; font-family:'Old English Text MT'">
-                              <div class="container" style="width: 100%";>
-                            <a class="nav-link text-light" asp-area="" asp-controller="MenuItems" asp-action="Index">Menu</a>
-                            </div>*@
-           @*             </div>
-                         </li>
-                      
-                    </ul>
-            </div>
-           
-        </nav>*@
+                </div>
+
+
+                <a href="https://www.grubhub.com/restaurant/mokutanya-1155-california-dr-burlingame/2193381" class="btn fa fa-shopping-cart" role="button">&nbsp Delivery</a>
+
+
+
+            </nav>
+        </div>
+
     </header>
     <div class="container">
         <main role="main" class="pb-3">
@@ -120,7 +77,6 @@
     </div>
 
     <footer class="border-top footer text-muted">
-   
     </footer>
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>

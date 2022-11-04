@@ -17,7 +17,7 @@ namespace MokuWebsite
 
         public IEnumerable<MenuItems> GetAllItems()
         {
-            return _conn.Query<MenuItems>("SELECT * FROM MenuItems ORDER BY CategoryID");
+            return _conn.Query<MenuItems>("SELECT * FROM MenuItems ORDER BY CategoryID , ID");
         }
 
         public MenuItems GetItem(int id)
@@ -28,16 +28,16 @@ namespace MokuWebsite
 
         public IEnumerable<MenuItems> GetAllSkewers()
         {
-            return _conn.Query<MenuItems>("SELECT * FROM MenuItems WHERE CategoryID = 1");
+            return _conn.Query<MenuItems>("SELECT * FROM MenuItems WHERE CategoryID = 1 Order by ID");
         }
 
         public IEnumerable<MenuItems> GetAllTapas()
         {
-            return _conn.Query<MenuItems>("SELECT * FROM MenuItems WHERE CategoryID = 2");
+            return _conn.Query<MenuItems>("SELECT * FROM MenuItems WHERE CategoryID = 2 ORDER BY ID");
         }
         public IEnumerable<MenuItems> GetAllRamen()
         {
-            return _conn.Query<MenuItems>("SELECT * FROM MenuItems WHERE CategoryID = 3");
+            return _conn.Query<MenuItems>("SELECT * FROM MenuItems WHERE CategoryID = 3 ORDER BY ID");
         }
         public void UpdateMenuItems(MenuItems menuItems)
         {

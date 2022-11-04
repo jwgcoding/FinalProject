@@ -45,6 +45,7 @@
                 width: auto;
                 float: right;
                 height: auto;
+                font-size: 16px;
             }
 
             label {
@@ -52,17 +53,24 @@
                 font-family: 'Old English Text MT';
                 font-size: 24px;
             }
-            table{
-                border-color:yellow;
-            }
-            
 
+            table {
+                border-color: yellow;
+            }
+
+            a {
+                font-size: 16px;
+            }
+
+            .btn {
+                font-size: 16px;
+            }
         </style>
     </div>
 
     <h2>Tapas</h2>
     <div style="display: block">
-        <a href="/MenuItems/InsertMenuItem/" class="btn btn-success m-1">Create a New Item</a>
+        <a href="/MenuItems/InsertMenuItem/" class="btn btn-warning m-1">Create a Menu Item</a>
     </div>
     <div class="dropdown">
         <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -74,42 +82,35 @@
             <a class="dropdown-item" asp-controller="MenuItems" asp-action="Tapas" type="button">Tapas</a>
             <a class="dropdown-item" asp-controller="MenuItems" asp-action="Ramens" type="button">Ramens</a>
         </div>
-    </div> <div class="row">
-        <div class=" col-sm-12">
-            <div class=" form-inline pull-right">
-                <label>Item Search</label>
-                <input type = "text" class="form-control" id="textSearch"/>
+
+        <div class="container">
+            <div style="width:100%; margin:0 auto;">
+                @*<table class="table" cellpadding="0" cellspacing="0" border="1" width="100%">*@
+                <table id="demoGrid" class="table table-active table-hover dt-responsive nowrap " width="100%" cellspacing="0">
+                    <tr>
+                        <th>Item Name</th>
+                        <th>Price</th>
+                        <th>Seafood</th>
+                        <th>Has Gluten</th>
+                        <th>Picture</th>
+                    </tr>
+
+                    @foreach (var items in @Model)
+                    {
+                        <tr>
+                            <td>
+                                <form asp-controller="MenuItems" asp-action="ViewMenuItem">
+                                    <button class="btn btn-outline-warning" id="submit" name="id" type="submit" value="@items.ID">@items.ItemName</button>
+                                </form>
+                            </td>
+                            <td>$@items.Price</td>
+                            <td>@items.IsSeafood</td>
+                            <td>@items.HasGluten</td>
+                            <td><img src=@items.Picture height="140" width="140" class="rounded-circle"></td>
+                        </tr>
+                    }
+                </table>
+
             </div>
         </div>
-    </div>
-    <div class="container">
-        <div style="width:100%; margin:0 auto;">
-            @*<table class="table" cellpadding="0" cellspacing="0" border="1" width="100%">*@
-            <table id="demoGrid" class="table table-active table-hover dt-responsive nowrap " width="100%" cellspacing="0">
-                <tr>
-                    <th>Item Name</th>
-                    <th>Price</th>
-                    <th>Seafood</th>
-                    <th>Has Gluten</th>
-                    <th>Picture</th>
-                </tr>
-
-                @foreach (var items in @Model)
-                {
-                    <tr>
-                        <td>
-                            <form asp-controller="MenuItems" asp-action="ViewMenuItem">
-                                <button class="btn btn-outline-warning" id="submit" name="id" type="submit" value="@items.ID">@items.ItemName</button>
-                            </form>
-                        </td>
-                        <td>$@items.Price</td>
-                        <td>@items.IsSeafood</td>
-                        <td>@items.HasGluten</td>
-                        <td><img src=@items.Picture height="150" width="150" class="rounded-circle"></td>
-                    </tr>
-                }
-            </table>
-
-        </div>
-    </div>
 </body>

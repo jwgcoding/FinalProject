@@ -19,55 +19,56 @@
             font-size: 60px;
             color: white;
         }
+
         body {
             background-color: black;
-            
         }
-       label {
+
+        label {
             color: white;
         }
     </style>
 
     <h2 class="">Update: @Model.ItemName</h2>
-    
+
 
     @using (Html.BeginForm("UpdateProductToDatabase", "MenuItems", "Post"))
     {
         <div class="row">
-    <div class="col">
-        <input asp-for="ID" type="hidden" value="@Model.ID" />
+            <div class="col">
+                <input asp-for="ID" type="hidden" value="@Model.ID" />
 
-        <label asp-for="ItemName" class="control-label">Name</label>
-        <input type="text" name="ItemName" class="form-check  mb-3" value="@Model.ItemName" />
+                <label asp-for="ItemName" class="control-label">Name</label>
+                <input type="text" name="ItemName" class="form-check  mb-3" value="@Model.ItemName" />
 
-        <label asp-for="Price" class="control-label">Price</label>
-        <input type="number" name="Price" class="form-check mb-1" value="@Model.Price" />
+                <label asp-for="Price" class="control-label">Price</label>
+                <input type="number" name="Price" class="form-check mb-1" value="@Model.Price" />
 
-        <label asp-for="CategoryID" class="control-label">Category ID:</label>
-        <select type="number" name="CategoryID" class="form-check form-select mb-3" value="@Model.CategoryID">
-            <option value="1">Skewers</option>
-            <option value="2">Tapas</option>
-            <option value="3">Ramens</option>
-            
-        </select>
+                <label asp-for="CategoryID" class="control-label">Category ID:</label>
+                <select type="number" name="CategoryID" class="form-check form-select mb-3" value="@Model.CategoryID">
+                    <option value="1">Skewers</option>
+                    <option value="2">Tapas</option>
+                    <option value="3">Ramens</option>
 
-        <label asp-for="HasGluten" class="control-label">Does this item have gluten?:</label>
-        <select type="" name="HasGluten" class="form-check form-select mb-2" value="@Model.HasGluten">
-            <option value="0">No</option>
-            <option value="1">Yes</option>
+                </select>
+
+                <label asp-for="HasGluten" class="control-label">Does this item have gluten?:</label>
+                <select type="" name="HasGluten" class="form-check form-select mb-2" value="@Model.HasGluten">
+                    <option value="0">No</option>
+                    <option value="1">Yes</option>
 
 
-        </select>
+                </select>
 
-        <label asp-for="IsSeafood" class="control-label">Is this a seafood item?:</label>
-        <input type="submit" name="IsSeafood" class="form-check mb-1" value="@Model.IsSeafood" />
+                <label asp-for="IsSeafood" class="control-label">Is this a seafood item?:</label>
+                <input type="submit" name="IsSeafood" class="form-check mb-1" value="@Model.IsSeafood" />
 
-        <div style="display: block">
-            <a href="/MenuItems/Index" class="btn btn-outline-primary mt-1">Go Back</a>
+                <div style="display: block">
+                    <a href="/MenuItems/Index" class="btn btn-outline-primary mt-1">Go Back</a>
 
-            <input type="submit" value="Update Product" class="btn btn-outline-warning mt-1" />
+                    <input type="submit" value="Update Product" class="btn btn-outline-warning mt-1" />
+                </div>
+            </div>
         </div>
-       </div>
-       </div>
     }
 </div>

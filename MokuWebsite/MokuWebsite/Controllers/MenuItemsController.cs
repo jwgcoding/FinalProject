@@ -18,7 +18,7 @@ namespace MokuWebsite.Controllers
         public IActionResult Index()
         {
             var menuItems = repo.GetAllItems();
-            foreach(var item in menuItems)
+            foreach (var item in menuItems)
             {
                 if (string.IsNullOrWhiteSpace(item.Picture))
                 {
@@ -31,27 +31,53 @@ namespace MokuWebsite.Controllers
         public IActionResult Skewers()
         {
             var skewers = repo.GetAllSkewers();
+            foreach (var item in skewers)
+            {
+                if (string.IsNullOrWhiteSpace(item.Picture))
+                {
+                    item.Picture = "/lib/Images/imagecomingsoon.jpg";
+                }
+            }
             return View(skewers);
         }
         //Gets all tapas method
         public IActionResult Tapas()
         {
             var tapas = repo.GetAllTapas();
+            foreach (var item in tapas)
+            {
+                if (string.IsNullOrWhiteSpace(item.Picture))
+                {
+                    item.Picture = "/lib/Images/imagecomingsoon.jpg";
+                }
+            }
             return View(tapas);
 
         }
         //Gets all ramens method
         public IActionResult Ramens()
         {
-            var ramen = repo.GetAllRamen(); 
+
+            var ramen = repo.GetAllRamen();
+
+            foreach (var item in ramen)
+            {
+                if (string.IsNullOrWhiteSpace(item.Picture))
+                {
+                    item.Picture = "/lib/Images/imagecomingsoon.jpg";
+                }
+            }
+
+
+
             return View(ramen);
         }
 
         //Allows us to access ViewMenuItem view + gives empty picture default picture
         public IActionResult ViewMenuItem(int id)
         {
-           
-            
+
+
             var menuItem = repo.GetItem(id);
             if (string.IsNullOrWhiteSpace(menuItem.Picture))
             {
@@ -79,7 +105,7 @@ namespace MokuWebsite.Controllers
         {
             repo.UpdateMenuItems(menuItems);
 
-            return RedirectToAction("ViewMenuItem", new {id = menuItems.ID});
+            return RedirectToAction("ViewMenuItem", new { id = menuItems.ID });
         }
         //Create new menuitem
         public IActionResult InsertMenuItem()

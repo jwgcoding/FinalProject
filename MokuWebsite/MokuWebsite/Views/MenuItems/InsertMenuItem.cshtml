@@ -1,5 +1,4 @@
-﻿
-@model MenuItems
+﻿@model MenuItems
 <meta charset="utf-8" />
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -12,65 +11,69 @@
 @*<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.1.3/js/bootstrap.bundle.min.js"></script>
 <script type="text/javascript" src="https://cdn.datatables.net/v/bs5/jq-3.6.0/dt-1.12.1/b-2.2.3/fc-4.1.0/sc-2.0.7/sb-1.3.4/sp-2.0.2/sl-1.4.0/datatables.min.js"></script>*@
 <style>
-    h2{
-        color:white;
-        font-family:'Times New Roman', Times, serif;
-        font-size:24px;
-        
-    
+    h2 {
+        color: white;
+        font-family: 'Times New Roman', Times, serif;
+        font-size: 24px;
     }
-    label {
-        font-size: 24px; 
-         color:white;
-        font-family:'Times New Roman', Times, serif;
-    }
-   body{
-        background-color: black
-   }
-   th,td{
-        color:white;
-       font-size:24px;
-   }
 
+    label {
+        font-size: 24px;
+        color: white;
+        font-family: 'Times New Roman', Times, serif;
+    }
+
+    body {
+        background-color: black
+    }
+
+    th, td {
+        color: white;
+        font-size: 24px;
+    }
+
+    .btn {
+        font-size: 16px;
+    }
 
 </style>
-<div class="bg bg-dark p-3 mt-5 border border-danger rounded "> 
+<div class="bg bg-dark p-3 mt-5 border border-danger rounded ">
     <h2 class="">Create a New Menu Item</h2>
-    
+
     @using (Html.BeginForm("InsertMenuItemToDatabase", "MenuItems", "Post"))
     {
         <input asp-for="ID" type="hidden" value="" />
 
         <label asp-for="ItemName" class="name control-label ">Item Name</label>
-            <input type="text" name="ItemName" class="form-check form-select mb-2" value="" />
+        <input type="text" name="ItemName" class="form-check form-select mb-2" value="" />
 
         <label asp-for="Price" class="control-label">Price</label>
-            <input type="number" name="Price" class="form-check form-select mb-2" />
+        <input type="number" name="Price" class="form-check form-select mb-2" />
 
         <div class="form-group">
-                <label asp-for="CategoryID" class="control-label">What type of item?</label>
-                <select type="number" name="CategoryID" class="form-check form-select mb-2" value="@Model.CategoryID">
-                    <option value="1">Skewers</option>
-                    <option value="2">Tapas</option>
-                    <option value="3">Ramens</option>
+            <label asp-for="CategoryID" class="control-label">What type of item?</label>
+            <select type="number" name="CategoryID" class="form-check form-select mb-2" value="@Model.CategoryID">
+                <option value="1">Skewers</option>
+                <option value="2">Tapas</option>
+                <option value="3">Ramens</option>
 
 
-                </select>
+            </select>
 
             <label asp-for="IsSeafood" class="control-label">Is this a seafood item?:</label>
-                <select type="number" name="IsSeafood" class="form-check form-select mb-2" value="@Model.IsSeafood">
+            <select type="number" name="IsSeafood" class="form-check form-select mb-2" value="@Model.IsSeafood">
                 <option value="0">No</option>
                 <option value="1">Yes</option>
 
             </select>
 
             <label asp-for="HasGluten" class="control-label">Does this item have gluten?:</label>
-                <input type="text" name="HasGluten" class="form-check form-select mb-2" value="@Model.HasGluten" />
+            <input type="text" name="HasGluten" class="form-check form-select mb-2" value="@Model.HasGluten" />
         </div>
         <div style="display: block">
             <a href="/MenuItems/Index" class="btn btn-outline-primary mt-1"> Back</a>
-        <input type="submit" value="Create Product" class="btn btn-outline-warning mt-1 "/>
+            <input type="submit" value="Create Menu Item" class="btn btn-outline-warning mt-1 " />
         </div>
     }
-   
+
 </div>
