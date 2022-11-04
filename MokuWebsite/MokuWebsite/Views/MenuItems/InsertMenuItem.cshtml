@@ -36,7 +36,7 @@
 </style>
 <div class="bg bg-dark p-3 mt-5 border border-danger rounded "> 
     <h2 class="">Create a New Menu Item</h2>
-    <body>
+    
     @using (Html.BeginForm("InsertMenuItemToDatabase", "MenuItems", "Post"))
     {
         <input asp-for="ID" type="hidden" value="" />
@@ -72,5 +72,5 @@
         <input type="submit" value="Create Product" class="btn btn-outline-warning mt-1 "/>
         </div>
     }
-    </body>
+   
 </div>

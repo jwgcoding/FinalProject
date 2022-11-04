@@ -22,7 +22,7 @@ namespace MokuWebsite
 
         public MenuItems GetItem(int id)
         {
-          return _conn.QuerySingle<MenuItems>("SELECT * FROM MenuItems WHERE ID = @id ", new { id = id });
+            return _conn.QuerySingle<MenuItems>("SELECT * FROM MenuItems WHERE ID = @id ", new { id = id });
 
         }
 
@@ -30,7 +30,7 @@ namespace MokuWebsite
         {
             return _conn.Query<MenuItems>("SELECT * FROM MenuItems WHERE CategoryID = 1");
         }
-       
+
         public IEnumerable<MenuItems> GetAllTapas()
         {
             return _conn.Query<MenuItems>("SELECT * FROM MenuItems WHERE CategoryID = 2");
@@ -48,21 +48,22 @@ namespace MokuWebsite
         public void InsertMenuItems(MenuItems menuItems)
         {
             _conn.Execute("INSERT INTO MenuItems (ItemNAME, PRICE, CATEGORYID, HasGluten, IsSeafood) VALUES (@name, @price, @categoryID, @seafood, @gluten);",
-                new { name = menuItems.ItemName, price = menuItems.Price, categoryID = menuItems.CategoryID, seafood = menuItems.IsSeafood, gluten = menuItems.HasGluten});
+                new { name = menuItems.ItemName, price = menuItems.Price, categoryID = menuItems.CategoryID, seafood = menuItems.IsSeafood, gluten = menuItems.HasGluten });
+
         }
 
-        
+
         public MenuItems AssignMenuItem()
         {
-            
+
             var menuItems = new MenuItems();
             return menuItems;
         }
         public void DeleteMenuItems(MenuItems menuItems)
         {
             _conn.Execute("DELETE FROM MenuItems WHERE ID = @id;", new { id = menuItems.ID });
-    
+
         }
     }
 }
-  
+
