@@ -61,14 +61,17 @@
             </select>
 
             <label asp-for="IsSeafood" class="control-label">Is this a seafood item?:</label>
-            <select type="number" name="IsSeafood" class="form-check form-select mb-2" value="@Model.IsSeafood">
+            <select type="" name="IsSeafood" class="form-check form-select mb-2" value="@Model.IsSeafood">
                 <option value="0">No</option>
                 <option value="1">Yes</option>
 
             </select>
 
             <label asp-for="HasGluten" class="control-label">Does this item have gluten?:</label>
-            <input type="text" name="HasGluten" class="form-check form-select mb-2" value="@Model.HasGluten" />
+            <select type="" name="IsSeafood" class="form-check  form-select mb-1" value="@Model.IsSeafood">
+                <option value="0">No</option>
+                <option value="1">Yes</option>
+            </select>
         </div>
         <div style="display: block">
             <a href="/MenuItems/Index" class="btn btn-outline-primary mt-1"> Back</a>

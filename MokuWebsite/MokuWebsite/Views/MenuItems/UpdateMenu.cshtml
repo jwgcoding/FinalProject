@@ -61,8 +61,10 @@
                 </select>
 
                 <label asp-for="IsSeafood" class="control-label">Is this a seafood item?:</label>
-                <input type="submit" name="IsSeafood" class="form-check mb-1" value="@Model.IsSeafood" />
-
+                <select type="" name="IsSeafood" class="form-check  form-select mb-1" value="@Model.IsSeafood">
+                <option value="0">No</option>
+                <option value="1">Yes</option>
+                </select>
                 <div style="display: block">
                     <a href="/MenuItems/Index" class="btn btn-outline-primary mt-1">Go Back</a>
 
